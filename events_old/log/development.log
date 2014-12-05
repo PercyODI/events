@@ -1,0 +1,3468 @@
+
+
+Started GET "/" for 24.206.167.73 at 2014-12-02 01:07:11 +0000
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.6) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.7ms)
+  [1m[36m (15.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (10.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEvents (20141130223848)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141130223848"]]
+  [1m[35m (12.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM schema_migrations[0m
+
+
+Started GET "/" for 24.206.167.73 at 2014-12-02 01:10:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 16ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 01:10:52 +0000
+Processing by EventsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 633ms (Views: 628.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 01:10:53 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 01:10:53 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 01:10:53 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 01:10:53 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 01:10:53 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 01:10:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 01:10:53 +0000
+  [1m[36mEvent Load (3.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "events" ("created_at", "location", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-02 01:14:33.206005"], ["location", "Denver, CO"], ["name", "Bug Smash"], ["price", 0.0], ["updated_at", "2014-12-02 01:14:33.206005"]]
+  [1m[35m (18.0ms)[0m  commit transaction
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("created_at", "location", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-02 01:16:28.822885"], ["location", "Dallas, TX"], ["name", "Kata Camp"], ["price", 75.0], ["updated_at", "2014-12-02 01:16:28.822885"]]
+  [1m[35m (13.9ms)[0m  commit transaction
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+Processing by EventsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 01:16:39 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 01:16:59 +0000
+Processing by EventsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 01:17:00 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 01:17:00 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 01:17:00 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 01:17:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 01:17:00 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 01:17:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 01:17:00 +0000
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "events" ("created_at", "location", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-12-02 01:18:30.106744"], ["location", "Austin, TX"], ["name", "Hackathon"], ["price", 15.0], ["updated_at", "2014-12-02 01:18:30.106744"]]
+  [1m[36m (41.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+Processing by EventsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 01:18:33 +0000
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 01:21:34 +0000
+Processing by EventsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 01:21:34 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:34 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:34 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:35 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 01:21:35 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:35 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:35 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+Processing by EventsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 119ms (Views: 117.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 01:21:51 +0000
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM schema_migrations[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddFieldsToEvents (20141202015813)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "events" ADD "starts_at" datetime[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "events" ADD "description" text
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141202015813"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM schema_migrations[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "events" SET "description" = ?, "starts_at" = ?, "updated_at" = ? WHERE "events"."id" = 1  [["description", "A fun evening of bug smashing!"], ["starts_at", "2015-03-12 02:02:15.479458"], ["updated_at", "2014-12-02 02:02:26.799632"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE (Hackathon) LIMIT 1[0m
+SQLite3::SQLException: no such column: Hackathon: SELECT  "events".* FROM "events"  WHERE (Hackathon) LIMIT 1
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."title" = 'Hackathon' LIMIT 1
+SQLite3::SQLException: no such column: events.title: SELECT  "events".* FROM "events"  WHERE "events"."title" = 'Hackathon' LIMIT 1
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."name" = 'Hackathon' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "events" SET "description" = ?, "starts_at" = ?, "updated_at" = ? WHERE "events"."id" = 3[0m  [["description", "Hunker down at the Hackathon!"], ["starts_at", "2014-12-02 00:00:00.000000"], ["updated_at", "2014-12-02 02:03:52.280905"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "events" SET "description" = ?, "starts_at" = ?, "updated_at" = ? WHERE "events"."id" = 2  [["description", "Practice your craft kata style!"], ["starts_at", "2014-12-09 00:00:00.000000"], ["updated_at", "2014-12-02 02:05:01.439100"]]
+  [1m[36m (16.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 02:05:13 +0000
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by EventsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 52ms (Views: 49.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 02:05:13 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 02:05:13 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 02:05:13 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 02:05:13 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 02:05:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 02:05:13 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 02:05:14 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 02:14:45 +0000
+Processing by EventsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 02:14:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 02:14:46 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 02:14:46 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 02:14:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 02:14:46 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 02:14:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 02:14:46 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 14:56:59 +0000
+Processing by EventsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 14:56:59 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 14:57:00 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 14:57:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 14:57:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 14:57:00 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 14:57:00 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 14:57:00 +0000
+
+
+Started GET "/" for 24.206.167.73 at 2014-12-02 15:10:32 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY "events"."id" DESC LIMIT 1[0m
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:12:45 +0000
+Processing by EventsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "events"  LIMIT 1) subquery_for_count[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  LIMIT 1
+  Rendered events/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 51ms (Views: 46.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:12:45 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:12:45 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:12:45 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:12:46 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:12:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:12:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:12:46 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:15:03 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:03 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:15:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:03 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:15:04 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:04 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:04 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:04 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 49ms (Views: 45.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:15:14 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:19:53 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:19:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:19:54 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:19:54 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:19:54 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:19:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:19:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:19:54 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:20:12 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:20:13 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:20:13 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:20:13 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:20:13 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:20:13 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:20:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:20:13 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:21:40 +0000
+Processing by EventsController#index as HTML
+  Rendered events/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 7ms
+
+SyntaxError (/home/ubuntu/workspace/app/views/events/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;@output_buffer.to_s
+             ^
+/home/ubuntu/workspace/app/views/events/index.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/app/views/events/index.html.erb:29: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/events/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+  app/views/events/index.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/events/index.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.9ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:23:23 +0000
+Processing by EventsController#index as HTML
+  Rendered events/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 4ms
+
+SyntaxError (/home/ubuntu/workspace/app/views/events/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;@output_buffer.to_s
+             ^
+/home/ubuntu/workspace/app/views/events/index.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/app/views/events/index.html.erb:29: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/events/index.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+  app/views/events/index.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/events/index.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.5ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 64ms (Views: 60.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:23:31 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:26:32 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x000000032893a0>:0x00000003288180>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_35220560'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_35220560'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.2ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:26:55 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x000000032893a0>:0x007f48e058e348>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_69975489143720'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_69975489143720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.3ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:27:08 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x007f48e0113a70>:0x007f48e0112c60>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_69975489143720'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_69975489143720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.5ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:27:33 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x0000000450c270>:0x0000000450b7d0>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_69975489143720'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_69975489143720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.8ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:27:42 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x0000000450c270>:0x000000041495c0>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_69975489143720'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_69975489143720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.0ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:27:43 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x0000000450c270>:0x00000003e528d0>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_69975489143720'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_69975489143720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.9ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:27:44 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x0000000450c270>:0x00000003610c30>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_69975489143720'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_69975489143720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.2ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:27:56 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined method `free?' for #<#<Class:0x00000001d13d18>:0x00000001d05c18>):
+    19:             </tr>
+    20:             <tr>
+    21:                 <th>Price:</th>
+    22:                 <td><%= format_price(event) %></td>
+    23:             </tr>
+    24:         </table>
+    25:     </article>
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:22:in `block in _app_views_events_index_html_erb__2379659317265759728_69975489143720'
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__2379659317265759728_69975489143720'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.9ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:28:46 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 50ms (Views: 46.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:28:46 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:28:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:28:47 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:28:47 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:28:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:28:47 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:28:47 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:29:28 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:29:29 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:29:29 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:29:29 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:29:29 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:29:29 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:29:29 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:29:29 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:30:19 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:30:20 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:30:20 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:30:20 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:30:20 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:30:20 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:30:20 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:30:20 +0000
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:35:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 167ms (Views: 153.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:21 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:21 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:21 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:21 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:21 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:21 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:21 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:46 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:49 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:35:55 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:56 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:56 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:56 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:56 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:35:56 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:56 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:35:56 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 15:36:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 286ms (Views: 268.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 15:36:14 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 15:36:14 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 15:36:14 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 15:36:14 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 15:36:14 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 15:36:14 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 15:36:14 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 21:14:42 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (83.7ms)
+Completed 200 OK in 289ms (Views: 278.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 21:14:43 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 21:14:43 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 21:14:43 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 21:14:43 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 21:14:43 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 21:14:43 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 21:14:44 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:46:31 +0000
+
+ActionController::RoutingError (No route matches [GET] "/events/1"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.1ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:47:13 +0000
+
+AbstractController::ActionNotFound (The action 'show' could not be found for EventsController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.9ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:47:57 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/events_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/events_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (83.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (117.4ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:48:11 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/events_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/events_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.0ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 22:51:30 +0000
+
+SyntaxError (/home/ubuntu/workspace/app/controllers/events_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/events_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.3ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-02 22:51:38 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 192ms (Views: 187.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 22:51:39 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 22:51:39 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 22:51:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 22:51:39 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 22:51:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 22:51:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 22:51:40 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:54:11 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 6ms
+
+ActionView::MissingTemplate (Missing template events/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ubuntu/workspace/app/views"
+):
+  actionview (4.1.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.6) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.6) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.6) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.6ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:56:53 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined local variable or method `event' for #<#<Class:0x000000042dcf68>:0x007fcd144227d0>):
+    1: <article>
+    2:     <header>
+    3:       <h2><%= event.name %></h2>
+    4:     </header>
+    5:     <p>
+    6:       <%= event.description %>
+  app/views/events/show.html.erb:3:in `_app_views_events_show_html_erb___3710544290032080436_70259392448880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.0ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:57:45 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <article>
+    2:     <header>
+    3:       <h2><%= @event.name %></h2>
+    4:     </header>
+    5:     <p>
+    6:       <%= @event.description %>
+  app/views/events/show.html.erb:3:in `_app_views_events_show_html_erb___3710544290032080436_70259390705020'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.3ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-02 22:59:30 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 49ms (Views: 39.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:30 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:30 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:30 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:31 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:31 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:31 +0000
+
+
+Started GET "/events/2" for 24.206.167.73 at 2014-12-02 22:59:36 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:37 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:37 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:37 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:37 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:37 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:37 +0000
+
+
+Started GET "/events/3" for 24.206.167.73 at 2014-12-02 22:59:41 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:41 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:41 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:42 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:42 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:42 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:42 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:42 +0000
+
+
+Started GET "/events/4" for 24.206.167.73 at 2014-12-02 22:59:44 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=4):
+  app/controllers/events_controller.rb:7:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.9ms)
+
+
+Started GET "/events/2" for 24.206.167.73 at 2014-12-02 22:59:48 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:48 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:48 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-02 22:59:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:49 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:49 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-02 22:59:49 +0000
+
+
+Started GET "/events/2" for 24.206.167.73 at 2014-12-03 02:49:19 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 02:49:19 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 02:49:20 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:20 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:20 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:20 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:20 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:20 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 02:49:23 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:24 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:24 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 02:49:24 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:24 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:24 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 02:49:24 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:24 +0000
+
+
+Started GET "/events/" for 24.206.167.73 at 2014-12-03 02:49:26 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:27 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:27 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:27 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 02:49:27 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:27 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 02:49:27 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 02:49:27 +0000
+
+
+Started GET "/events" for 66.102.6.61 at 2014-12-03 02:57:18 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/" for 24.206.167.73 at 2014-12-03 21:42:53 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (3.7ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 215ms (Views: 158.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 21:42:55 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 21:42:55 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:55 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:55 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:55 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:55 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 21:42:57 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 107ms (Views: 75.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 21:42:58 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:58 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:58 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:58 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:58 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 21:42:58 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 21:42:58 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 21:43:06 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 800ms (Views: 797.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 21:43:07 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 21:43:07 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 21:43:07 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 21:43:07 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 21:43:07 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 21:43:07 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 21:43:07 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 21:43:09 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 65ms (Views: 61.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 21:44:52 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 21:44:53 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 21:44:53 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 21:44:53 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 21:44:53 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 21:44:53 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 21:44:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 21:44:53 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 21:44:54 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 21:44:56 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/2" for 24.206.167.73 at 2014-12-03 21:44:57 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 21:44:59 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/3" for 24.206.167.73 at 2014-12-03 21:45:00 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 21:45:02 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 24.206.167.73 at 2014-12-03 21:46:07 +0000
+
+SyntaxError (/home/ubuntu/workspace/config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  get "events" => "events#index"
+             ^
+/home/ubuntu/workspace/config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  get "events" => "events#index"
+                         ^):
+  config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (55.2ms)
+
+
+Started GET "/" for 24.206.167.73 at 2014-12-03 21:46:21 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 21:46:22 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 21:46:22 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 21:46:23 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 21:46:23 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 21:46:23 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 21:46:23 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 21:46:23 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 21:47:44 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 84ms (Views: 80.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/3" for 24.206.167.73 at 2014-12-03 21:47:53 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 50.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 21:47:54 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/2" for 24.206.167.73 at 2014-12-03 21:47:56 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 21:47:58 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 22:11:45 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:11:45 +0000
+
+ActionController::RoutingError (No route matches [GET] "/events/1/edit"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.0ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:11:45 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:11:46 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:11:46 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:11:46 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:11:46 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:11:46 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:11:46 +0000
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY "events"."id" DESC LIMIT 1[0m
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:13:49 +0000
+
+AbstractController::ActionNotFound (The action 'edit' could not be found for EventsController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:15:03 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 78ms (Views: 66.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:04 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:04 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:04 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:04 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:15:04 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:15:04 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:04 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:15:11 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:12 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:12 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:12 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:15:12 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:15:12 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:12 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:15:12 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:16:13 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 10ms
+
+SyntaxError (/home/ubuntu/workspace/app/views/events/edit.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/events/edit.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.4ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:16:22 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/home/ubuntu/workspace/app/views/events/edit.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/events/edit.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (43.3ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 148ms (Views: 145.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:16:37 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:17:33 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (365.9ms)
+Completed 500 Internal Server Error in 370ms
+
+ActionView::Template::Error (undefined method `text_filed' for #<ActionView::Helpers::FormBuilder:0x007fcd1405c970>):
+    3: <%= form_for(@event) do |f| %>
+    4:     <p>
+    5:         <%= f.label :name %><br/>
+    6:         <%= f.text_filed :name %>
+    7:     </p>
+    8: <% end %>
+  app/views/events/edit.html.erb:6:in `block in _app_views_events_edit_html_erb___4312727908671778642_70259390549920'
+  app/views/events/edit.html.erb:3:in `_app_views_events_edit_html_erb___4312727908671778642_70259390549920'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.5ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:17:44 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:17:45 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:17:45 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:17:45 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:17:45 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:17:45 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:17:45 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:17:45 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:18:31 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:18:32 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:18:32 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:18:32 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:18:32 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:18:32 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:18:32 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:18:32 +0000
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 22:18:46 +0000
+
+ActionController::RoutingError (No route matches [PATCH] "/events/1"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.9ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 22:19:02 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:03 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:03 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:03 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:19:03 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:19:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:03 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:19:05 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:19:51 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:19:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:51 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:19:51 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:51 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:51 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:19:52 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:21:12 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (116.0ms)
+Completed 200 OK in 318ms (Views: 278.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:13 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:13 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:13 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:13 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:21:13 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:21:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:14 +0000
+
+
+Started GET "/events/2/edit" for 24.206.167.73 at 2014-12-03 22:21:34 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:35 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:35 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:35 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:21:35 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:35 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:21:35 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:21:35 +0000
+
+
+Started PATCH "/events/2" for 24.206.167.73 at 2014-12-03 22:47:31 +0000
+
+ActionController::RoutingError (No route matches [PATCH] "/events/2"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.0ms)
+
+
+Started PATCH "/events/2" for 24.206.167.73 at 2014-12-03 22:48:33 +0000
+
+AbstractController::ActionNotFound (The action 'update' could not be found for EventsController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+
+
+Started PATCH "/events/2" for 24.206.167.73 at 2014-12-03 22:49:10 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Kata Camp", "description"=>"Practice your craft kata style!", "location"=>"Dallas, TX", "price"=>"75", "starts_at(1i)"=>"2014", "starts_at(2i)"=>"12", "starts_at(3i)"=>"9", "starts_at(4i)"=>"00", "starts_at(5i)"=>"00"}, "commit"=>"Update Event", "ed"=>"2"}
+Completed 500 Internal Server Error in 2ms
+
+RuntimeError ():
+  app/controllers/events_controller.rb:15:in `update'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.2ms)
+
+
+Started GET "/" for 24.206.167.73 at 2014-12-03 22:52:15 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:52:15 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:52:15 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:52:15 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:52:15 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:52:16 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:52:16 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:52:16 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 22:52:17 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 79ms (Views: 76.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:52:19 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 22:52:20 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Bug Smash", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "ed"=>"1"}
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find Event without an ID):
+  app/controllers/events_controller.rb:15:in `update'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.4ms)
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+
+
+Started GET "/" for 24.206.167.73 at 2014-12-03 22:54:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 267ms (Views: 251.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 22:54:35 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 22:54:36 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 22:54:36 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 22:54:36 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 22:54:36 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 22:54:36 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 22:54:36 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 22:54:37 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 22:54:39 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 22:54:41 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Bug Smash", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "ed"=>"1"}
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Event without an ID):
+  app/controllers/events_controller.rb:15:in `update'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.6ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 22:55:50 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Bug Smash", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 38ms
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/events_controller.rb:16:in `update'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.1ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 22:58:17 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Bug Smash Deluxe", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"59", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (undefined method `permit' for #<EventsController:0x007ff8e41ed770>):
+  app/controllers/events_controller.rb:17:in `update'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.3ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 22:58:46 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Bug Smash Deluxe", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"59", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (73.8ms)[0m  [1mUPDATE "events" SET "name" = ?, "price" = ?, "starts_at" = ?, "updated_at" = ? WHERE "events"."id" = 1[0m  [["name", "Bug Smash Deluxe"], ["price", 59.0], ["starts_at", "2015-03-12 02:02:00.000000"], ["updated_at", "2014-12-03 22:58:46.358837"]]
+  [1m[35m (61.8ms)[0m  commit transaction
+Completed 500 Internal Server Error in 155ms
+
+ActionView::MissingTemplate (Missing template events/update, application/update with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/ubuntu/workspace/app/views"
+):
+  actionview (4.1.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.6) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.6) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.6) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.5ms)
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 23:01:48 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Bug Smash Deluxe", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"59", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://events-percyodi.c9.io/events/1
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 23:01:48 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 23:01:49 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 23:01:49 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 23:01:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 23:01:49 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 23:01:49 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 23:01:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 23:01:49 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 23:02:07 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 23:02:17 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Bug Smash", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "events" SET "name" = ?, "price" = ?, "updated_at" = ? WHERE "events"."id" = 1  [["name", "Bug Smash"], ["price", 0.0], ["updated_at", "2014-12-03 23:02:17.753702"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://events-percyodi.c9.io/events/1
+Completed 302 Found in 17ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 23:02:17 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 23:02:18 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:18 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:18 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:18 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 23:02:18 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:18 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:18 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 23:02:23 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"BugSmash", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "events" SET "name" = ?, "updated_at" = ? WHERE "events"."id" = 1  [["name", "BugSmash"], ["updated_at", "2014-12-03 23:02:27.375844"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://events-percyodi.c9.io/events/1
+Completed 302 Found in 16ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 23:02:27 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 23:02:28 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 23:05:38 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 52ms (Views: 49.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"BugSmashORama", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "events" SET "name" = ?, "updated_at" = ? WHERE "events"."id" = 1  [["name", "BugSmashORama"], ["updated_at", "2014-12-03 23:05:56.324471"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://events-percyodi.c9.io/events/1
+Completed 302 Found in 16ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 23:05:56 +0000
+
+
+Started GET "/events/1/edit" for 24.206.167.73 at 2014-12-03 23:05:58 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 60ms (Views: 58.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/events/1" for 24.206.167.73 at 2014-12-03 23:06:02 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"BugSmash", "description"=>"A fun evening of bug smashing!", "location"=>"Denver, CO", "price"=>"0", "starts_at(1i)"=>"2015", "starts_at(2i)"=>"3", "starts_at(3i)"=>"12", "starts_at(4i)"=>"02", "starts_at(5i)"=>"02"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "events" SET "name" = ?, "updated_at" = ? WHERE "events"."id" = 1  [["name", "BugSmash"], ["updated_at", "2014-12-03 23:06:02.577380"]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://events-percyodi.c9.io/events/1
+Completed 302 Found in 19ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-03 23:06:02 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-03 23:06:03 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-03 23:06:03 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-03 23:06:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-03 23:06:03 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-03 23:06:03 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-03 23:06:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-03 23:06:03 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-03 23:06:28 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for 24.206.167.73 at 2014-12-04 01:36:03 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=new):
+  app/controllers/events_controller.rb:7:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.8ms)
+
+
+Started GET "/events/" for 24.206.167.73 at 2014-12-04 01:40:19 +0000
+Processing by EventsController#index as HTML
+  Rendered events/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 9ms
+
+SyntaxError (/home/ubuntu/workspace/app/views/events/index.html.erb:29: syntax error, unexpected keyword_ensure, expecting ')'
+/home/ubuntu/workspace/app/views/events/index.html.erb:31: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/events/index.html.erb:29: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/events/index.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.9ms)
+
+
+Started GET "/events/" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 62ms (Views: 59.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:40:40 +0000
+
+
+Started GET "/events/new" for 24.206.167.73 at 2014-12-04 01:40:43 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 54.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:41:55 +0000
+
+
+Started GET "/events/new" for 24.206.167.73 at 2014-12-04 01:42:24 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:42:24 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:42:24 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:42:24 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:42:24 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:42:24 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:42:24 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:42:25 +0000
+
+
+Started POST "/events" for 24.206.167.73 at 2014-12-04 01:42:47 +0000
+
+AbstractController::ActionNotFound (The action 'create' could not be found for EventsController):
+  actionpack (4.1.6) lib/abstract_controller/base.rb:131:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.1.4/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+
+
+Started POST "/events" for 24.206.167.73 at 2014-12-04 01:47:50 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Code and Coffee", "description"=>"Sling some code with a cup o' joe!", "location"=>"Portland, OR", "price"=>"0", "starts_at(1i)"=>"2014", "starts_at(2i)"=>"12", "starts_at(3i)"=>"4", "starts_at(4i)"=>"01", "starts_at(5i)"=>"42"}, "commit"=>"Create Event"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("created_at", "description", "location", "name", "price", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-12-04 01:47:50.333247"], ["description", "Sling some code with a cup o' joe!"], ["location", "Portland, OR"], ["name", "Code and Coffee"], ["price", 0.0], ["starts_at", "2014-12-04 01:42:00.000000"], ["updated_at", "2014-12-04 01:47:50.333247"]]
+  [1m[35m (147.2ms)[0m  commit transaction
+Redirected to https://events-percyodi.c9.io/events/4
+Completed 302 Found in 163ms (ActiveRecord: 148.6ms)
+
+
+Started GET "/events/4" for 24.206.167.73 at 2014-12-04 01:47:50 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:47:51 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:47:51 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:47:51 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:47:51 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:47:51 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:47:51 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:47:51 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-04 01:47:59 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for 24.206.167.73 at 2014-12-04 01:49:34 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 64ms (Views: 58.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/4" for 24.206.167.73 at 2014-12-04 01:49:37 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 53ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/4/edit" for 24.206.167.73 at 2014-12-04 01:49:39 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered events/edit.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/4" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Code and Coffee II", "description"=>"Sling some code with a cup o' joe!", "location"=>"Portland, OR", "price"=>"0", "starts_at(1i)"=>"2014", "starts_at(2i)"=>"12", "starts_at(3i)"=>"4", "starts_at(4i)"=>"01", "starts_at(5i)"=>"42"}, "commit"=>"Update Event", "id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "events" SET "name" = ?, "updated_at" = ? WHERE "events"."id" = 4[0m  [["name", "Code and Coffee II"], ["updated_at", "2014-12-04 01:49:44.051150"]]
+  [1m[35m (50.1ms)[0m  commit transaction
+Redirected to https://events-percyodi.c9.io/events/4
+Completed 302 Found in 56ms (ActiveRecord: 50.7ms)
+
+
+Started GET "/events/4" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:49:44 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-04 01:49:55 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 54ms (Views: 52.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-04 01:50:31 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 52ms (Views: 48.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:32 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:32 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:32 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:32 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:50:32 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:50:32 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:32 +0000
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-04 01:50:33 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/4" for 24.206.167.73 at 2014-12-04 01:50:37 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/4/edit" for 24.206.167.73 at 2014-12-04 01:50:38 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered events/edit.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 54ms (Views: 51.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/4" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Code and Coffee", "description"=>"Sling some code with a cup o' joe!", "location"=>"Portland, OR", "price"=>"0", "starts_at(1i)"=>"2014", "starts_at(2i)"=>"12", "starts_at(3i)"=>"4", "starts_at(4i)"=>"01", "starts_at(5i)"=>"42"}, "commit"=>"Update Event", "id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "events" SET "name" = ?, "updated_at" = ? WHERE "events"."id" = 4[0m  [["name", "Code and Coffee"], ["updated_at", "2014-12-04 01:50:42.060111"]]
+  [1m[35m (41.9ms)[0m  commit transaction
+Redirected to https://events-percyodi.c9.io/events/4
+Completed 302 Found in 47ms (ActiveRecord: 42.5ms)
+
+
+Started GET "/events/4" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:50:42 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:50:43 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-04 01:50:44 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/new" for 24.206.167.73 at 2014-12-04 01:51:50 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events" for 24.206.167.73 at 2014-12-04 01:52:01 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Test Event", "description"=>"", "location"=>"", "price"=>"", "starts_at(1i)"=>"2014", "starts_at(2i)"=>"12", "starts_at(3i)"=>"4", "starts_at(4i)"=>"01", "starts_at(5i)"=>"51"}, "commit"=>"Create Event"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("created_at", "description", "location", "name", "starts_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-12-04 01:52:01.561982"], ["description", ""], ["location", ""], ["name", "Test Event"], ["starts_at", "2014-12-04 01:51:00.000000"], ["updated_at", "2014-12-04 01:52:01.561982"]]
+  [1m[36m (107.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://events-percyodi.c9.io/events
+Completed 302 Found in 113ms (ActiveRecord: 108.1ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-04 01:52:01 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `zero?' for nil:NilClass):
+    21:             </tr>
+    22:             <tr>
+    23:                 <th>Price:</th>
+    24:                 <td><%= format_price(event) %></td>
+    25:             </tr>
+    26:         </table>
+    27:     </article>
+  app/models/event.rb:3:in `free?'
+  app/helpers/events_helper.rb:3:in `format_price'
+  app/views/events/index.html.erb:24:in `block in _app_views_events_index_html_erb__1412574163977490340_38685160'
+  app/views/events/index.html.erb:5:in `_app_views_events_index_html_erb__1412574163977490340_38685160'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.4@rails4/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.6ms)
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-04 01:56:37 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 71ms (Views: 66.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:56:38 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:38 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:38 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:38 +0000
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:56:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:38 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:38 +0000
+
+
+Started GET "/events/5" for 24.206.167.73 at 2014-12-04 01:56:42 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/5/edit" for 24.206.167.73 at 2014-12-04 01:56:43 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered events/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 60ms (Views: 58.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/events/5" for 24.206.167.73 at 2014-12-04 01:56:49 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ABKvtSTAfVFbLmY2xXrc82CPp7yjSXy2fG8zagw0OdM=", "event"=>{"name"=>"Test Event", "description"=>"", "location"=>"", "price"=>"2", "starts_at(1i)"=>"2014", "starts_at(2i)"=>"12", "starts_at(3i)"=>"4", "starts_at(4i)"=>"01", "starts_at(5i)"=>"51"}, "commit"=>"Update Event", "id"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "events" SET "price" = ?, "updated_at" = ? WHERE "events"."id" = 5  [["price", 2.0], ["updated_at", "2014-12-04 01:56:49.991036"]]
+  [1m[36m (26.8ms)[0m  [1mcommit transaction[0m
+Redirected to https://events-percyodi.c9.io/events/5
+Completed 302 Found in 32ms (ActiveRecord: 27.4ms)
+
+
+Started GET "/events/5" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+
+
+Started GET "/assets/events.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+
+
+Started GET "/assets/events.css?body=1" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+
+
+Started GET "/assets/application.js?body=1" for 24.206.167.73 at 2014-12-04 01:56:50 +0000
+
+
+Started GET "/events" for 24.206.167.73 at 2014-12-04 01:56:56 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/1" for 24.206.167.73 at 2014-12-04 01:57:23 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 62ms (Views: 50.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 66.102.6.61 at 2014-12-04 14:44:00 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 47ms (Views: 46.2ms | ActiveRecord: 0.4ms)
